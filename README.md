@@ -36,7 +36,7 @@ The application also have the following three tests:
 
 1) First I used Trello to plan out step by step what I need to do in order to build the web application with the features/tests. 
 
-2) I copy a package.Json and gulpfile I used from a previous GA project I did but only included the dependencies I need for this project. 
+2) I copy a package.Json and gulpfile I used from a previous GA project I did but only included the dependencies I needed for this project. 
 
 3) I created a new file index.js and added the following set up: 
 
@@ -88,26 +88,24 @@ app.get('/valves', function(req, res) {
 
 ```
 
-10)I used Mocha as my testing framework and for assertions I used Chai. To be able to make HTTP requests inside tests, I used a framework called supertests. I have also installed istanbul.
+10)I used Mocha as my testing framework and for assertions I used Chai.
 
 11)I created a file called mocha.opts as a setup file for mocha. 
 
 12)Also I created spec_helper.js file to help keep my code DRY. 
 
-13)Next I run the test to see if it is working. 
+13)Next I run the test to see if it is working. I run yarn test in my terminal to test my code. 
 
 14)I used request to make http calls in my testing 
 -https://github.com/request/request 
 and use assert/expect - http://chaijs.com/api/assert/
 
-15)I required the expect,  asset and request in my test.js
+15)I wrote the first code to test if a valid URL will return a 200 HTTP status code. 
 
-16)I wrote the first code to test if a valid URL will return a 200 HTTP status code. 
+16)I wrote the second test to see if an invalid URL should return a 400 HTTP status code. 
 
-17)I wrote the second test to see if an invalid URL should return a 400 HTTP status code. 
+17)The last test I found it quite hard to code but I managed to pass the test  after some thinking outside of the box. 
 
-18)The last test I found it quite hard to code but I managed to pass the test  after some thinking outside of the box. 
-
-19)I tested each one separately while coding but if you do yarn test in the terminal all three tests will passed.
+18)I tested each one separately while coding but if you do yarn test in the terminal all three tests will passed.
  
 
