@@ -104,7 +104,7 @@ and use assert/expect - http://chaijs.com/api/assert/
 
 16)I wrote the second test to test if an invalid URL should return a 400 HTTP status code. 
 
-17)I wrote the last test to verifies that requests to valid URLS return a body that contains the HTML generated from the relevant index.md markdown file.
+17)I wrote the last test to verify that requests to valid URLS return a body that contains the HTML generated from the relevant index.md markdown file.
 
 18)I tested each one separately while coding but if you do yarn test in the terminal all three tests will passed.
  
