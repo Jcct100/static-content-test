@@ -12,7 +12,7 @@ describe('3 tests for static content challenge', function() {
       });
   });
 
-  it('URL returns a body that contains the HTML generated from the relevant index.md markdown file', function(done) {
+  it('URL should return a body that contains the HTML generated from the relevant index.md markdown file', function(done) {
     request.get({ url: 'http://localhost:8000/valves' },
       function(error, response, body) {
         assert.ok(body.includes('Acme Co. valves are amongst the highest quality in the industry. Whether it&#39;s for industrial, commercial, medical or space exploration, you can always count on an Acme Co. valve'));
