@@ -30,7 +30,7 @@ The application also have the following three tests:
 
 ## #Screenshot (Trello) 
 
-![](https://i.imgur.com/vmkeUxZ.png)
+![](https://i.imgur.com/MeiuKx8.png)
 
 ## #Approach 
 
