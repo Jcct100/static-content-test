@@ -12,7 +12,6 @@ The challenge here is to create a node.js application that displays HTML pages a
 * Trello (agile methodology)
 * Mocha
 * Istanbul
-* Supertest
 * Babel
 * Showdown (https://github.com/showdownjs/showdown) 
 
