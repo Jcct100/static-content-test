@@ -35,7 +35,7 @@ The application also have the following three tests:
 
 1) First I used Trello to plan out step by step what I need to do in order to build the web application with the features/tests. 
 
-2) I copy a package.Json and gulpfile I used from a previous GA project I did but only include the dependencies I need for this project. 
+2) I copy a package.Json and gulpfile I used from a previous GA project I did but only included the dependencies I need for this project. 
 
 3) I created a new file index.js and added the following set up: 
 
@@ -67,7 +67,7 @@ app.get('/valves', function(req, res) {
 
 8)I also used a package called 
 Showdown which is a Javascript Markdown to HTML converter -
-https://github.com/showdownjs/showdown I installed the packaged, required it and use it in my code as per below. 
+https://github.com/showdownjs/showdown I installed the packaged, required it and used it in my code as per below. 
 
 ```
 app.get('/valves', function(req, res) {
@@ -80,7 +80,7 @@ app.get('/valves', function(req, res) {
 
 ```
 
-9)My problem was that I was returning HTML content with the HTML tags. I found a very code that will strip the HTML tags in JavaScript - https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/ 
+9)My problem was that I was returning HTML content with the HTML tags. I found a code that will strip the HTML tags in JavaScript - https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/ 
 
 ```
 .replace(/(<([^>]+)>)/ig,'');
@@ -91,7 +91,7 @@ app.get('/valves', function(req, res) {
 
 11)I created a file called mocha.opts as a setup file for mocha. 
 
-12)Also I created a spec_helper.js file to help keep my code DRY. 
+12)Also I created spec_helper.js file to help keep my code DRY. 
 
 13)Next I run the test to see if it is working. 
 
@@ -107,6 +107,6 @@ and use assert/expect - http://chaijs.com/api/assert/
 
 18)The last test I found it quite hard to write but I managed to pass the test  after some trial and error. 
 
-19)All three tests passes when I do yarn test in the terminal
+19)All three tests passes when I do yarn test in the terminal. 
  
 
