@@ -13,6 +13,7 @@ The challenge here is to create a node.js application that displays HTML pages a
 * Mocha
 * Istanbul
 * Supertest
+* Babel
 * Showdown (https://github.com/showdownjs/showdown) 
 
 ## #Features and tests 
@@ -104,10 +105,10 @@ and use assert/expect - http://chaijs.com/api/assert/
 
 16)I wrote the first code to test if a valid URL will return a 200 HTTP status code. 
 
-17)I wrote the second test to see if invalid URL should return a 400 HTTP status code. 
+17)I wrote the second test to see if an invalid URL should return a 400 HTTP status code. 
 
-18)The last test I found it quite hard to write but I managed to pass the test  after some trial and error. 
+18)The last test I found it quite hard to code but I managed to pass the test  after some thinking outside of the box. 
 
-19)All three tests passes when I do yarn test in the terminal. 
+19)I tested each one separately while coding but if you do yarn test in the terminal all three tests will passed.
  
 
