@@ -4,7 +4,7 @@ const expect = require('chai').expect;
 const request = require('request');
 const assert = require('assert');
 
-describe('testing URL', function() {
+describe('3 tests for static content challenge', function() {
 
   it('Valid URL should return a 200 HTTP status code', function(done) {
     request.get({ url: 'http://localhost:8000/valves' },

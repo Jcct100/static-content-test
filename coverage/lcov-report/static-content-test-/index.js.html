@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40.91% </span>
+        <span class="strong">14.81% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/22</span>
+        <span class='fraction'>4/27</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">17.39% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/18</span>
+        <span class='fraction'>4/23</span>
       </div>
     </div>
   </div>
@@ -72,71 +72,86 @@
 27
 28
 29
-30</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+30
+31
+32
+33
+34
+35</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const express = require('express');
-const app     = express();
-const fs      = require('fs');
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const express   = require('express');
+const app       = express();
+const fs        = require('fs');
+const showdown  = require('showdown');
+<span class="cstat-no" title="statement not covered" >const converter = new showdown.Converter();</span>
 &nbsp;
-app.set('views', `${__dirname}/views`);
-app.set('view engine', 'ejs');
+<span class="cstat-no" title="statement not covered" >app.set('views', `${__dirname}/views`);</span>
+<span class="cstat-no" title="statement not covered" >app.set('view engine', 'ejs');</span>
 &nbsp;
-app.get('/valves', <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >app.get('/valves', <span class="fstat-no" title="function not covered" >function(req, res) {</span></span>
 <span class="cstat-no" title="statement not covered" >  fs.readFile(__dirname + '/content/valves/index.md', <span class="fstat-no" title="function not covered" >function(err, data) {</span></span>
+<span class="cstat-no" title="statement not covered" >    const filename = converter.makeHtml(data).replace(/(&lt;([^&gt;]+)&gt;)/ig,'');</span>
 <span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >throw err;</span></span>
-<span class="cstat-no" title="statement not covered" >    res.render('template', { content: data });</span>
+<span class="cstat-no" title="statement not covered" >    res.render('template', { content: filename });</span>
   });
 });
 &nbsp;
-app.get('/about-page', <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >app.get('/about-page', <span class="fstat-no" title="function not covered" >function(req, res) {</span></span>
 <span class="cstat-no" title="statement not covered" >  fs.readFile(__dirname + '/content/about-page/index.md', <span class="fstat-no" title="function not covered" >function(err, data) {</span></span>
+<span class="cstat-no" title="statement not covered" >    const filename = converter.makeHtml(data).replace(/(&lt;([^&gt;]+)&gt;)/ig,'');</span>
 <span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >throw err;</span></span>
-<span class="cstat-no" title="statement not covered" >    res.render('template', { content: data });</span>
+<span class="cstat-no" title="statement not covered" >    res.render('template', { content: filename });</span>
   });
 });
 &nbsp;
-app.get('/jobs', <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >app.get('/jobs', <span class="fstat-no" title="function not covered" >function(req, res) {</span></span>
 <span class="cstat-no" title="statement not covered" >  fs.readFile(__dirname + '/content/jobs/index.md', <span class="fstat-no" title="function not covered" >function(err, data) {</span></span>
+<span class="cstat-no" title="statement not covered" >    const filename = converter.makeHtml(data).replace(/(&lt;([^&gt;]+)&gt;)/ig,'');</span>
 <span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >throw err;</span></span>
-<span class="cstat-no" title="statement not covered" >    res.render('template', { content: data });</span>
+<span class="cstat-no" title="statement not covered" >    res.render('template', { content: filename });</span>
   });
 });
 &nbsp;
-app.listen(3000, () =&gt; <span class="cstat-no" title="statement not covered" >console.log('Express is up and running'))</span>;
+<span class="cstat-no" title="statement not covered" >app.listen(3000, () =&gt; <span class="cstat-no" title="statement not covered" >console.log('Express is up and running'))</span>;</span>
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jan 31 2018 19:55:01 GMT+0000 (GMT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jan 31 2018 20:45:17 GMT+0000 (GMT)
 </div>
 </div>
 <script src="../prettify.js"></script>

@@ -3,7 +3,17 @@
 The challenge here is to create a node.js application that displays HTML pages at URLs that match the names of the folders in the `content` folder. The content of these pages should come from a combination of the template HTML file and a markdown file containing the content.
 
 ## #Technologies used:
--
+* Node.js
+* Express.js
+* EJS
+* Gulp
+* Nodemon
+* Chai
+* Trello (agile methodology)
+* Mocha
+* Istanbul
+* Supertest
+* Showdown (https://github.com/showdownjs/showdown) 
 
 ## #Features and tests 
 The application have the following three features: 
@@ -17,7 +27,6 @@ The application also have the following three tests:
 * one that verifies that requests to valid URLs return a 200 HTTP status code
 * one that verifies that requests to valid URLS return a body that contains the HTML generated from the relevant `index.md` markdown file
 * one that verifies that requests to URLs that do not match content folders return a 404 HTTP status code 
-
 
 ## #Screenshot (Trello) 
 
@@ -49,29 +58,55 @@ I required the file system and wrote this code below to pass the markdown file a
 
 ```
 app.get('/valves', function(req, res) {
-  fs.readFile(__dirname + '/content/valves/index.md', 'utf-8', function(err, data) {
+  fs.readFile(__dirname + '/content/valves/index.md', function(err, data) {
     if (err) throw err;
     res.render('template', { content: data });
   });
 });
 ```
-8)I used Mocha as my testing framework and for assertions I used Chai. To be able to make HTTP requests inside tests, I used a framework called supertests. I have also installed istanbul.
 
-9)I created a file called mocha.opts as a setup file for mocha. 
+8)I also used a package called 
+Showdown which is a Javascript Markdown to HTML converter -
+https://github.com/showdownjs/showdown I installed the packaged, required it and use it in my code as per below. 
 
-10)Also I created a spec_helper.js file to help keep my code DRY. 
+```
+app.get('/valves', function(req, res) {
+  fs.readFile(__dirname + '/content/valves/index.md', function(err, data) {
+    const filename = converter.makeHtml(data);
+    if (err) throw err;
+    res.render('template', { content: filename });
+  });
+});
 
-11)Next I run the test to see if it is working. 
+```
 
-12)I used request to make http calls in my testing 
+9)My problem was that I was returning HTML content with the HTML tags. I found a very code that will strip the HTML tags in JavaScript - https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/ 
+
+```
+.replace(/(<([^>]+)>)/ig,'');
+
+```
+
+10)I used Mocha as my testing framework and for assertions I used Chai. To be able to make HTTP requests inside tests, I used a framework called supertests. I have also installed istanbul.
+
+11)I created a file called mocha.opts as a setup file for mocha. 
+
+12)Also I created a spec_helper.js file to help keep my code DRY. 
+
+13)Next I run the test to see if it is working. 
+
+14)I used request to make http calls in my testing 
 -https://github.com/request/request 
 and use assert/expect - http://chaijs.com/api/assert/
 
-13)I required the expect,  asset and request in my test.js
+15)I required the expect,  asset and request in my test.js
 
-14)I wrote the first code to test if a valid URL will return a 200 HTTP status code. 
+16)I wrote the first code to test if a valid URL will return a 200 HTTP status code. 
 
-15)I wrote the second test to see if invalid URL should return a 400 HTTP status code. 
+17)I wrote the second test to see if invalid URL should return a 400 HTTP status code. 
 
-16)The last test I found it quite hard to write but I managed to pass the test  after some trial and error.  
+18)The last test I found it quite hard to write but I managed to pass the test  after some trial and error. 
+
+19)All three tests passes when I do yarn test in the terminal
+ 
 
