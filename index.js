@@ -8,7 +8,7 @@ app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
 app.get('/valves', function(req, res) {
-  fs.readFile(__dirname + '/content/valves/index.md', function(err, data) {
+  fs.readFile(__dirname + '/content/valves/index.md', 'utf-8',  function(err, data) {
     const filename = converter.makeHtml(data).replace(/(<([^>]+)>)/ig,'');
     if (err) throw err;
     res.render('template', { content: filename });
@@ -16,7 +16,7 @@ app.get('/valves', function(req, res) {
 });
 
 app.get('/about-page', function(req, res) {
-  fs.readFile(__dirname + '/content/about-page/index.md', function(err, data) {
+  fs.readFile(__dirname + '/content/about-page/index.md', 'utf-8',  function(err, data) {
     const filename = converter.makeHtml(data).replace(/(<([^>]+)>)/ig,'');
     if (err) throw err;
     res.render('template', { content: filename });
@@ -24,7 +24,7 @@ app.get('/about-page', function(req, res) {
 });
 
 app.get('/jobs', function(req, res) {
-  fs.readFile(__dirname + '/content/jobs/index.md', function(err, data) {
+  fs.readFile(__dirname + '/content/jobs/index.md', 'utf-8', function(err, data) {
     const filename = converter.makeHtml(data).replace(/(<([^>]+)>)/ig,'');
     if (err) throw err;
     res.render('template', { content: filename });

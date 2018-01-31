@@ -1,8 +1,6 @@
-/* globals  describe, it */
+/* globals  describe, request, it, expect, assert */
 
-const expect = require('chai').expect;
-const request = require('request');
-const assert = require('assert');
+require('./spec_helper');
 
 describe('3 tests for static content challenge', function() {
 
