@@ -36,7 +36,7 @@ The application also have the following three tests:
 
 1) First I used Trello to plan out step by step what I need to do in order to build the web application with the features/tests. 
 
-2) I copy a package.Json and gulpfile I used from a previous GA project I did but only included the dependencies I needed for this project. 
+2) I used a package.Json and gulpfile from a previous GA project I did but only included the dependencies I needed for this project. 
 
 3) I created a new file index.js and added the following set up: 
 
