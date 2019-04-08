@@ -28,10 +28,6 @@ The application also have the following three tests:
 * one that verifies that requests to valid URLS return a body that contains the HTML generated from the relevant `index.md` markdown file
 * one that verifies that requests to URLs that do not match content folders return a 404 HTTP status code 
 
-## #Screenshot (Trello) 
-
-![](https://i.imgur.com/MeiuKx8.png)
-
 ## #Approach 
 
 1) First I used Trello to plan out step by step what I need to do in order to build the web application with the features/tests. 
